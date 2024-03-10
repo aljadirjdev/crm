@@ -13,16 +13,16 @@ export class HeaderComponent {
   menuMobile = 'hidden';
   menus: { id: number; name: string; link: string; icon: string }[] = [
     { id: 1, name: 'Home', link: 'home', icon: 'fa-solid fa-house' },
-    { id: 1, name: 'Store', link: 'store', icon: 'fa-solid fa-house' },
-    { id: 1, name: 'About', link: 'About', icon: 'fa-solid fa-house' },
+    { id: 2, name: 'Store', link: 'store', icon: 'fa-solid fa-house' },
+    { id: 3, name: 'About', link: 'about', icon: 'fa-solid fa-house' },
     {
-      id: 1,
-      name: 'Contact me',
-      link: 'Contact-me',
+      id: 4,
+      name: 'Contactame',
+      link: 'contact-me',
       icon: 'fa-solid fa-house',
     },
   ];
-viewMenu: any;
+  viewMenu: any;
 
   viewCloseDropdown() {
     if (this.menuDropdown) {

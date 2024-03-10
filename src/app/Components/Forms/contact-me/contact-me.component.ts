@@ -1,17 +1,28 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './contact-me.component.html',
-  styleUrl: './contact-me.component.css'
+  styleUrl: './contact-me.component.css',
 })
 export class ContactMeComponent {
+  conctactMeForm = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phoneNumber: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
+  });
 
-  sendContact(){
-    debugger
-    console.log("Mensaje formulario")
+  sendForm() {
+    console.log(this.conctactMeForm);
   }
 }

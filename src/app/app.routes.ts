@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
-import { StoreComponent } from './Pages/store/store.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
-import { UsersComponent } from './Components/Boards/users/users.component';
-import { CustomersComponent } from './Admin/customers/customers/customers.component';
+import { ViewUsersComponent } from './Admin/users/view-users/view-users.component';
+import { ContactMeComponent } from './Components/Forms/contact-me/contact-me.component';
+import { StoreComponent } from './Pages/store/store.component';
+import { AboutComponent } from './Pages/about/about.component';
 
 export const routes: Routes = [
   {
@@ -12,11 +13,11 @@ export const routes: Routes = [
     children: [
       {
         path: 'users', // child route path
-        component: UsersComponent, // child route component that the router renders
+        component: ViewUsersComponent, // child route component that the router renders
       },
       {
         path: 'child-b',
-        component: CustomersComponent, // another child route component that the router renders
+        component: ContactMeComponent, // another child route component that the router renders
       },
     ],
   },
@@ -30,5 +31,15 @@ export const routes: Routes = [
     path: 'store',
     title: 'Store',
     component: StoreComponent,
+  },
+  {
+    path: 'contact-me',
+    title: 'Contactame',
+    component: ContactMeComponent,
+  },
+  {
+    path: 'about',
+    title: 'About',
+    component: AboutComponent,
   },
 ];
